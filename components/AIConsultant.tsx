@@ -26,9 +26,14 @@ const AIConsultant: React.FC = () => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    const response = await getLegalGuidance(userMsg);
-    setMessages(prev => [...prev, { role: 'model', text: response }]);
-    setIsLoading(false);
+    try {
+      const response = await getLegalGuidance(userMsg);
+      setMessages(prev => [...prev, { role: 'model', text: response }]);
+    } catch (error) {
+      setMessages(prev => [...prev, { role: 'model', text: 'エラーが発生しました。時間をおいて再度お試しください。' }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
