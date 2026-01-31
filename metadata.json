@@ -1,0 +1,8 @@
+{
+  "name": "Nexus Administrative Scrivener Office",
+  "description": "A high-end, professional website for a modern administrative scrivener office, featuring AI-powered legal consultation and a sleek, minimalist design.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
